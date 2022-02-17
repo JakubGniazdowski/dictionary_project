@@ -6,6 +6,10 @@ def translation(word):
     word=word.lower()
     if word in data:
         return data[word]
+    elif word.title() in data: #if user entered "texas" this will check for "Texas" as well.
+        return data[word.title()]
+    elif word.upper() in data:
+        return data[word.upper()]
     elif len(difflib.get_close_matches(word ,data.keys()))>0:
         yn=input("did you mean %s instead. Enter Y if yes N if no: " % difflib.get_close_matches(word ,data.keys())[0])
         if yn=="Y":
