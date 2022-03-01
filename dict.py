@@ -6,7 +6,7 @@ def translation(word):
     word=word.lower()
     if word in data:
         return data[word]
-    elif word.title() in data: #if user entered "texas" this will check for "Texas" as well.
+    elif word.title() in data: 
         return data[word.title()]
     elif word.upper() in data:
         return data[word.upper()]
